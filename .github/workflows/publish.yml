@@ -101,29 +101,6 @@ jobs:
           TAG=${TEMP_ARRAY[@]: -1}
           npm run pkg:upload -- $TAG
 
-      - name: Checkout Branch
+      - name: How to install
         run: |
-          TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
-          TAG=${TEMP_ARRAY[@]: -1}
-          git checkout -b release/$TAG
-
-      - name: Artifact Maker
-        run: |
-          rm -rf $(ls -A | grep -vE "(dist)|(.git)")
-          rm .gitignore
-          mv dist/* .
-
-      - name: Git Config
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-
-      - name: Commit
-        run: |
-          TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
-          TAG=${TEMP_ARRAY[@]: -1}
-          git add -A
-          git commit -m "Release $TAG"
-          git tag release-$TAG
-          git push --set-upstream origin release/$TAG --tags
-          echo "Use: npm install github:m1cron-labs/serverless#release-$TAG"
+          echo "npm install github:m1cron-labs/serverless#$TAG"
