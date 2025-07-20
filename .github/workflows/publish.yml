@@ -100,3 +100,26 @@ jobs:
           TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
           TAG=${TEMP_ARRAY[@]: -1}
           npm run pkg:upload -- $TAG
+
+      - name: Checkout Branch
+        run: |
+          TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
+          TAG=${TEMP_ARRAY[@]: -1}
+          git checkout -b release/$TAG
+
+      - name: Artifact Maker
+        run: |
+          rm -rf $(ls -A | grep -vE "(dist)|(.git)")
+          rm .gitignore
+          mv dist/* .
+
+      - name: Commit
+        run: |
+          TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
+          TAG=${TEMP_ARRAY[@]: -1}
+          npm version $TAG --no-git-tag-version
+          git add -A
+          git commit -m "Release $TAG"
+          git tag release-$TAG
+          git push --set-upstream origin release/$TAG --tags
+          echo "CURRENT_GIT_HASH=$(git rev-parse HEAD)" >> $GITHUB_ENV
