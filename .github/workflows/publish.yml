@@ -52,6 +52,7 @@ jobs:
           script -e -c "npm test -- -b"
   ghPublish:
     name: Publish to GitHub
+    needs: prePublishPackageTest
     runs-on: ubuntu-latest
     env:
       # It'll work with secrets.GITHUB_TOKEN (which is provided by GitHub unconditionally)
