@@ -63,7 +63,7 @@ const chocoPackageTemplatePath = path.join(__dirname, 'choco-package-template');
   const chocoPackagePath = path.join(os.tmpdir(), 'serverless-choco-package');
   const chocoPackageToolsPath = path.join(chocoPackagePath, 'tools');
   const binaryUrl =
-    'https://github.com/serverless/serverless/releases/download/' +
+    'https://github.com/m1cron-labs/serverless/releases/download/' +
     `${versionTag}/serverless-win-x64.exe`;
 
   await fse.ensureDir(chocoPackageToolsPath).then(() =>
@@ -87,7 +87,7 @@ const chocoPackageTemplatePath = path.join(__dirname, 'choco-package-template');
               metadata: [metadata],
             } = data.package;
             metadata.version[0] = versionTag.slice(1);
-            metadata.releaseNotes[0] = `https://github.com/serverless/serverless/releases/tag/${versionTag}`;
+            metadata.releaseNotes[0] = `https://github.com/m1cron-labs/serverless/releases/tag/${versionTag}`;
             metadata.copyright[0] = `${new Date().getFullYear()}, Serverless Inc.`;
             metadata.tags[0] = packageMeta.keywords
               .filter((keyword) => !keyword.includes(' '))

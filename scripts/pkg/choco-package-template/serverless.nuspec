@@ -8,12 +8,12 @@
     <projectUrl>https://serverless.com/</projectUrl>
     <iconUrl>https://s3-us-west-2.amazonaws.com/assets.site.serverless.com/external/logo/serverless-logo.png</iconUrl>
     <copyright>TO_BE_GENERATED</copyright>
-    <licenseUrl>https://github.com/serverless/serverless/blob/main/LICENSE.txt</licenseUrl>
-    <packageSourceUrl>https://github.com/serverless/serverless/tree/master/scripts/pkg/choco-package-template</packageSourceUrl>
-    <projectSourceUrl>https://github.com/serverless/serverless/</projectSourceUrl>
+    <licenseUrl>https://github.com/m1cron-labs/serverless/blob/main/LICENSE.txt</licenseUrl>
+    <packageSourceUrl>https://github.com/m1cron-labs/serverless/tree/master/scripts/pkg/choco-package-template</packageSourceUrl>
+    <projectSourceUrl>https://github.com/m1cron-labs/serverless/</projectSourceUrl>
     <releaseNotes>TO_BE_GENERATED</releaseNotes>
     <docsUrl>https://serverless.com/framework/docs/</docsUrl>
-    <bugTrackerUrl>https://github.com/serverless/serverless/issues</bugTrackerUrl>
+    <bugTrackerUrl>https://github.com/m1cron-labs/serverless/issues</bugTrackerUrl>
     <tags>TO_BE_GENERATED</tags>
     <summary>TO_BE_GENERATED</summary>
     <description>TO_BE_GENERATED</description>

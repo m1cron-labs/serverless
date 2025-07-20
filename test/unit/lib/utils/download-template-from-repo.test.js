@@ -252,13 +252,13 @@ describe('downloadTemplateFromRepo', () => {
     });
 
     it('should parse a valid GitHub URL', async () => {
-      return expect(parseRepoURL('https://github.com/serverless/serverless')).to.be.fulfilled.then(
+      return expect(parseRepoURL('https://github.com/m1cron-labs/serverless')).to.be.fulfilled.then(
         (output) => {
           expect(output).to.deep.eq({
             owner: 'serverless',
             repo: 'serverless',
             branch: 'master',
-            downloadUrl: 'https://github.com/serverless/serverless/archive/master.zip',
+            downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
             isSubdirectory: false,
             pathToDirectory: '',
             username: '',
@@ -270,13 +270,13 @@ describe('downloadTemplateFromRepo', () => {
 
     it('should parse a valid GitHub URL with subdirectory', async () => {
       return expect(
-        parseRepoURL('https://github.com/serverless/serverless/tree/master/assets')
+        parseRepoURL('https://github.com/m1cron-labs/serverless/tree/master/assets')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
           owner: 'serverless',
           repo: 'serverless',
           branch: 'master',
-          downloadUrl: 'https://github.com/serverless/serverless/archive/master.zip',
+          downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
           isSubdirectory: true,
           pathToDirectory: 'assets',
           username: '',
@@ -287,13 +287,13 @@ describe('downloadTemplateFromRepo', () => {
 
     it('should parse a valid GitHub Entreprise URL', async () => {
       return expect(
-        parseRepoURL('https://github.mydomain.com/serverless/serverless')
+        parseRepoURL('https://github.mydomain.com/m1cron-labs/serverless')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
           owner: 'serverless',
           repo: 'serverless',
           branch: 'master',
-          downloadUrl: 'https://github.mydomain.com/serverless/serverless/archive/master.zip',
+          downloadUrl: 'https://github.mydomain.com/m1cron-labs/serverless/archive/master.zip',
           isSubdirectory: false,
           pathToDirectory: '',
           username: '',
@@ -304,13 +304,13 @@ describe('downloadTemplateFromRepo', () => {
 
     it('should parse a valid GitHub Entreprise with subdirectory', async () => {
       return expect(
-        parseRepoURL('https://github.mydomain.com/serverless/serverless/tree/master/assets')
+        parseRepoURL('https://github.mydomain.com/m1cron-labs/serverless/tree/master/assets')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
           owner: 'serverless',
           repo: 'serverless',
           branch: 'master',
-          downloadUrl: 'https://github.mydomain.com/serverless/serverless/archive/master.zip',
+          downloadUrl: 'https://github.mydomain.com/m1cron-labs/serverless/archive/master.zip',
           isSubdirectory: true,
           pathToDirectory: 'assets',
           username: '',
@@ -321,13 +321,13 @@ describe('downloadTemplateFromRepo', () => {
 
     it('should parse a valid GitHub Entreprise URL with authentication', async () => {
       return expect(
-        parseRepoURL('https://username:password@github.com/serverless/serverless/')
+        parseRepoURL('https://username:password@github.com/m1cron-labs/serverless/')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
           owner: 'serverless',
           repo: 'serverless',
           branch: 'master',
-          downloadUrl: 'https://github.com/serverless/serverless/archive/master.zip',
+          downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
           isSubdirectory: false,
           username: 'username',
           password: 'password',
@@ -387,13 +387,13 @@ describe('downloadTemplateFromRepo', () => {
     });
 
     it('should parse a valid GitLab URL ', async () => {
-      return parseRepoURL('https://gitlab.com/serverless/serverless').then((output) => {
+      return parseRepoURL('https://gitlab.com/m1cron-labs/serverless').then((output) => {
         expect(output).to.deep.eq({
           owner: 'serverless',
           repo: 'serverless',
           branch: 'master',
           downloadUrl:
-            'https://gitlab.com/serverless/serverless/-/archive/master/serverless-master.zip',
+            'https://gitlab.com/m1cron-labs/serverless/-/archive/master/serverless-master.zip',
           isSubdirectory: false,
           pathToDirectory: '',
           username: '',
@@ -403,14 +403,14 @@ describe('downloadTemplateFromRepo', () => {
     });
 
     it('should parse a valid GitLab URL with subdirectory', async () => {
-      return parseRepoURL('https://gitlab.com/serverless/serverless/tree/dev/subdir').then(
+      return parseRepoURL('https://gitlab.com/m1cron-labs/serverless/tree/dev/subdir').then(
         (output) => {
           expect(output).to.deep.eq({
             owner: 'serverless',
             repo: 'serverless',
             branch: 'dev',
             downloadUrl:
-              'https://gitlab.com/serverless/serverless/-/archive/dev/serverless-dev.zip',
+              'https://gitlab.com/m1cron-labs/serverless/-/archive/dev/serverless-dev.zip',
             isSubdirectory: true,
             pathToDirectory: 'subdir',
             username: '',
