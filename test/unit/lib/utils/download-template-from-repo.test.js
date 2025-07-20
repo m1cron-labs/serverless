@@ -255,7 +255,7 @@ describe('downloadTemplateFromRepo', () => {
       return expect(parseRepoURL('https://github.com/m1cron-labs/serverless')).to.be.fulfilled.then(
         (output) => {
           expect(output).to.deep.eq({
-            owner: 'serverless',
+            owner: 'm1cron-labs',
             repo: 'serverless',
             branch: 'master',
             downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
@@ -273,7 +273,7 @@ describe('downloadTemplateFromRepo', () => {
         parseRepoURL('https://github.com/m1cron-labs/serverless/tree/master/assets')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
-          owner: 'serverless',
+          owner: 'm1cron-labs',
           repo: 'serverless',
           branch: 'master',
           downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
@@ -290,7 +290,7 @@ describe('downloadTemplateFromRepo', () => {
         parseRepoURL('https://github.mydomain.com/m1cron-labs/serverless')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
-          owner: 'serverless',
+          owner: 'm1cron-labs',
           repo: 'serverless',
           branch: 'master',
           downloadUrl: 'https://github.mydomain.com/m1cron-labs/serverless/archive/master.zip',
@@ -307,7 +307,7 @@ describe('downloadTemplateFromRepo', () => {
         parseRepoURL('https://github.mydomain.com/m1cron-labs/serverless/tree/master/assets')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
-          owner: 'serverless',
+          owner: 'm1cron-labs',
           repo: 'serverless',
           branch: 'master',
           downloadUrl: 'https://github.mydomain.com/m1cron-labs/serverless/archive/master.zip',
@@ -324,7 +324,7 @@ describe('downloadTemplateFromRepo', () => {
         parseRepoURL('https://username:password@github.com/m1cron-labs/serverless/')
       ).to.be.fulfilled.then((output) => {
         expect(output).to.deep.eq({
-          owner: 'serverless',
+          owner: 'm1cron-labs',
           repo: 'serverless',
           branch: 'master',
           downloadUrl: 'https://github.com/m1cron-labs/serverless/archive/master.zip',
@@ -389,7 +389,7 @@ describe('downloadTemplateFromRepo', () => {
     it('should parse a valid GitLab URL ', async () => {
       return parseRepoURL('https://gitlab.com/m1cron-labs/serverless').then((output) => {
         expect(output).to.deep.eq({
-          owner: 'serverless',
+          owner: 'm1cron-labs',
           repo: 'serverless',
           branch: 'master',
           downloadUrl:
@@ -406,7 +406,7 @@ describe('downloadTemplateFromRepo', () => {
       return parseRepoURL('https://gitlab.com/m1cron-labs/serverless/tree/dev/subdir').then(
         (output) => {
           expect(output).to.deep.eq({
-            owner: 'serverless',
+            owner: 'm1cron-labs',
             repo: 'serverless',
             branch: 'dev',
             downloadUrl:
