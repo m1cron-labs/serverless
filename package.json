@@ -5,7 +5,7 @@
   "preferGlobal": true,
   "homepage": "https://serverless.com/framework/docs/",
   "author": "serverless.com",
-  "repository": "serverless/serverless",
+  "repository": "m1cron-labs/serverless",
   "keywords": [
     "serverless",
     "lambda",
