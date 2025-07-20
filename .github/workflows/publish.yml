@@ -113,6 +113,11 @@ jobs:
           rm .gitignore
           mv dist/* .
 
+      - name: Git Config
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
       - name: Commit
         run: |
           TEMP_ARRAY=($(echo $GITHUB_REF | tr "/" "\n"))
